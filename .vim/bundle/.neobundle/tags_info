@@ -1,4 +1,5 @@
 jellybeans.vim
+lightline.vim
 neobundle.vim
 neocomplete.vim
 neosnippet

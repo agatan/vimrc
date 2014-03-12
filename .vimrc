@@ -25,6 +25,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'itchyny/lightline.vim'
 
 NeoBundleLazy 'ujihisa/unite-colorscheme'
 
@@ -73,6 +74,19 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 全般
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -82,17 +96,25 @@ set clipboard=unnamed,unnamedplus
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 表示関連
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256
+if !has('gui_running')
+    set t_Co=256
+endif
+
+let g:lightline = {
+            \ 'colorscheme': 'jellybeans',
+            \ }
+
 colorscheme jellybeans
 set number
 set scrolloff=5
 set wrap
-set showbreak=+++
+set showbreak=+
 set nolist
 set cursorline
 set cursorcolumn
 set ruler
 set tabstop=4
+set laststatus=2
 syntax on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -102,7 +124,10 @@ set ignorecase
 set smartcase
 set nohlsearch
 set gdefault
-
+if !exists('loaded_matchit')
+  " matchitを有効化
+  runtime macros/matchit.vim
+endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 入力関係
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -114,4 +139,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 set expandtab
 set smarttab
 autocmd FileType scala set ts=2 sw=2 softtabstop=2
-
+autocmd FileType ruby set ts=2 sw=2 softtabstop=2
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
