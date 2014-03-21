@@ -1,3 +1,4 @@
+emmet-vim
 jellybeans.vim
 lightline.vim
 neobundle.vim
@@ -5,9 +6,11 @@ neocomplete.vim
 neosnippet
 neosnippet-snippets
 unite-colorscheme
+unite-rails
 unite.vim
 vim-hybrid
 vim-quickrun
+vim-rails
 vim-scala
 vimproc
 vimshell.vim

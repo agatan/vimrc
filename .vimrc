@@ -26,6 +26,9 @@ NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'derekwyatt/vim-scala.git'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'basyura/unite-rails'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'mattn/emmet-vim'
 
 NeoBundleLazy 'ujihisa/unite-colorscheme'
 
@@ -40,6 +43,7 @@ let g:unite_enable_split_vertically = 1
 nnoremap ,uf :<C-u>Unite<space>file<CR>
 nnoremap ,ub :<C-u>Unite<space>buffer<CR>
 nnoremap ,ur :<C-u>Unite<space>file_mru<CR>
+nnoremap ,ur :<C-u>Unite<space>rails/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplete
@@ -101,10 +105,10 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-            \ 'colorscheme': 'jellybeans',
+            \ 'colorscheme': 'hybrid',
             \ }
 
-colorscheme jellybeans
+colorscheme hybrid
 set number
 set scrolloff=5
 set wrap
@@ -140,6 +144,7 @@ set expandtab
 set smarttab
 autocmd FileType scala set ts=2 sw=2 softtabstop=2
 autocmd FileType ruby set ts=2 sw=2 softtabstop=2
+autocmd FileType eruby set ts=2 sw=2 softtabstop=2
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
