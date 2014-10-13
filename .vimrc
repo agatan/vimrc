@@ -42,6 +42,14 @@ NeoBundle 'tpope/vim-surround'
 
 "" 各言語
 
+" sphinx
+NeoBundleLazy 'Rykka/riv.vim',
+            \ {"autoload": {"filetypes": ["rst"]}}
+
+" jade
+NeoBundleLazy 'digitaltoad/vim-jade',
+            \ {"autoload": {"filetypes": ["jade"]}}
+
 " python
 
 NeoBundleLazy 'davidhalter/jedi-vim',
@@ -49,6 +57,8 @@ NeoBundleLazy 'davidhalter/jedi-vim',
 NeoBundleLazy 'nvie/vim-flake8',
             \ {"autoload": {"filetypes": ["python"]}}
 NeoBundleLazy 'Yggdroot/indentLine',
+            \ {"autoload": {"filetypes": ["python"]}}
+NeoBundleLazy 'jmcantrell/vim-virtualenv',
             \ {"autoload": {"filetypes": ["python"]}}
 
 "" color
@@ -127,6 +137,9 @@ let g:quickrun_config = {
 \       "runner" : "vimproc",
 \       "runner/vimproc/updatetime" : 60
 \   },
+\   "ruby" : {
+\       "command": "/Users/nao/.rbenv/shims/ruby"
+\   },
 \}
 
 
@@ -137,11 +150,16 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
+" jade
+autocmd FileType jade setlocal ts=2 shiftwidth=2 softtabstop=2
 
 " python系
 
 autocmd FileType python setlocal omnifunc=jedi#completions
 autocmd FileType python setlocal completeopt-=preview
+
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
 
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
@@ -162,7 +180,10 @@ let g:indentLine_color_term = 238
 let g:indentLine_color_gui = '#708090'
 let g:indentLine_char = '¦'
 
+let g:syntastic_python_checkers=['flake8']
 
+" ruby系
+let g:syntastic_ruby_checkers = ['rubocop']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -198,6 +219,7 @@ syntax on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 検索置換
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+set incsearch
 set ignorecase
 set smartcase
 set nohlsearch

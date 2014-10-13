@@ -83,6 +83,11 @@
 :Ref	ref.txt	/*:Ref*
 :Ref-option	ref.txt	/*:Ref-option*
 :RefHistory	ref.txt	/*:RefHistory*
+:RivInstruction	riv.txt	/*:RivInstruction*
+:RivIntro	riv.txt	/*:RivIntro*
+:RivPrimer	riv.txt	/*:RivPrimer*
+:RivQuickStart	riv.txt	/*:RivQuickStart*
+:RivSpecification	riv.txt	/*:RivSpecification*
 :SyntasticCheck	syntastic.txt	/*:SyntasticCheck*
 :SyntasticInfo	syntastic.txt	/*:SyntasticInfo*
 :SyntasticReset	syntastic.txt	/*:SyntasticReset*
@@ -115,6 +120,9 @@
 :VimShellSendString	vimshell.txt	/*:VimShellSendString*
 :VimShellTab	vimshell.txt	/*:VimShellTab*
 :VimShellTerminal	vimshell.txt	/*:VimShellTerminal*
+:VirtualEnvActivate	virtualenv.txt	/*:VirtualEnvActivate*
+:VirtualEnvDeactivate	virtualenv.txt	/*:VirtualEnvDeactivate*
+:VirtualEnvList	virtualenv.txt	/*:VirtualEnvList*
 :unite-sources-commands	unite.txt	/*:unite-sources-commands*
 <C-Y>,	emmet.txt	/*<C-Y>,*
 <C-Y>/	emmet.txt	/*<C-Y>\/*
@@ -518,6 +526,10 @@ g:vimshell_terminal_cursor	vimshell.txt	/*g:vimshell_terminal_cursor*
 g:vimshell_use_terminal_command	vimshell.txt	/*g:vimshell_use_terminal_command*
 g:vimshell_user_prompt	vimshell.txt	/*g:vimshell_user_prompt*
 g:vimshell_vimshrc_path	vimshell.txt	/*g:vimshell_vimshrc_path*
+g:virtualenv_auto_activate	virtualenv.txt	/*g:virtualenv_auto_activate*
+g:virtualenv_directory	virtualenv.txt	/*g:virtualenv_directory*
+g:virtualenv_loaded	virtualenv.txt	/*g:virtualenv_loaded*
+g:virtualenv_stl_format	virtualenv.txt	/*g:virtualenv_stl_format*
 i_<Plug>(neosnippet_start_unite_snippet)	neosnippet.txt	/*i_<Plug>(neosnippet_start_unite_snippet)*
 i_<Plug>(unite_choose_action)	unite.txt	/*i_<Plug>(unite_choose_action)*
 i_<Plug>(unite_complete)	unite.txt	/*i_<Plug>(unite_complete)*
@@ -1055,6 +1067,7 @@ ref-sources	ref.txt	/*ref-sources*
 ref-viewer	ref.txt	/*ref-viewer*
 ref.txt	ref.txt	/*ref.txt*
 ref.vim	ref.txt	/*ref.vim*
+riv.txt	riv.txt	/*riv.txt*
 s_<Plug>(neosnippet_expand)	neosnippet.txt	/*s_<Plug>(neosnippet_expand)*
 s_<Plug>(neosnippet_expand_or_jump)	neosnippet.txt	/*s_<Plug>(neosnippet_expand_or_jump)*
 s_<Plug>(neosnippet_jump)	neosnippet.txt	/*s_<Plug>(neosnippet_jump)*
@@ -1543,6 +1556,12 @@ vimshell-variables	vimshell.txt	/*vimshell-variables*
 vimshell.txt	vimshell.txt	/*vimshell.txt*
 vimshell_default_key_mappings	vimshell.txt	/*vimshell_default_key_mappings*
 vimshell_int_default_key_mappings	vimshell.txt	/*vimshell_int_default_key_mappings*
+virtualenv	virtualenv.txt	/*virtualenv*
+virtualenv-author	virtualenv.txt	/*virtualenv-author*
+virtualenv-commands	virtualenv.txt	/*virtualenv-commands*
+virtualenv-configuration	virtualenv.txt	/*virtualenv-configuration*
+virtualenv.txt	virtualenv.txt	/*virtualenv.txt*
+virtualenv.vim	virtualenv.txt	/*virtualenv.vim*
 x_<Plug>(neosnippet_expand_target)	neosnippet.txt	/*x_<Plug>(neosnippet_expand_target)*
 x_<Plug>(neosnippet_register_oneshot_snippet)	neosnippet.txt	/*x_<Plug>(neosnippet_register_oneshot_snippet)*
 x_<Plug>(neosnippet_start_unite_snippet_target)	neosnippet.txt	/*x_<Plug>(neosnippet_start_unite_snippet_target)*

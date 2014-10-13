@@ -6,12 +6,15 @@ neobundle.vim
 neocomplete.vim
 neosnippet
 neosnippet-snippets
+riv.vim
 syntastic
 unite.vim
 vim-flake8
 vim-hybrid
+vim-jade
 vim-quickrun
 vim-ref
 vim-surround
+vim-virtualenv
 vimproc.vim
 vimshell.vim
